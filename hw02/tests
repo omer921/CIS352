@@ -1,0 +1,39 @@
+GHCi, version 7.8.3: http://www.haskell.org/ghc/  :? for help
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Prelude> :load "/Users/OWinrauke/Dropbox/CIS352/hw02/hw02.hs"
+[1 of 1] Compiling Main             ( /Users/OWinrauke/Dropbox/CIS352/hw02/hw02.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> bmaxDepth t1
+Loading package array-0.5.0.0 ... linking ... done.
+Loading package deepseq-1.3.0.2 ... linking ... done.
+Loading package old-locale-1.0.0.6 ... linking ... done.
+Loading package time-1.4.2 ... linking ... done.
+Loading package random-1.0.1.1 ... linking ... done.
+Loading package containers-0.5.5.1 ... linking ... done.
+Loading package pretty-1.1.1.1 ... linking ... done.
+Loading package template-haskell ... linking ... done.
+Loading package QuickCheck-2.6 ... linking ... done.
+Loading package filepath-1.3.0.2 ... linking ... done.
+Loading package bytestring-0.10.4.0 ... linking ... done.
+Loading package unix-2.7.0.1 ... linking ... done.
+Loading package directory-1.2.1.0 ... linking ... done.
+Loading package process-1.2.0.0 ... linking ... done.
+3
+*Main> mmaxDepth t2
+3
+*Main> quickCheck bleaves_prop
++++ OK, passed 100 tests.
+*Main> quickCheck mleaves_prop
++++ OK, passed 100 tests.
+*Main> quickCheck postfix_prop
++++ OK, passed 100 tests.
+*Main> quickCheck recon_prop
+*** Failed! (after 1 test): 
+Exception:
+  /Users/OWinrauke/Dropbox/CIS352/hw02/hw02.hs:(111,1)-(112,138): Non-exhaustive patterns in function reconstruct
+Empty
+*Main> makeTreesTest
+False
+*Main> 

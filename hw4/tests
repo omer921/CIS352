@@ -1,0 +1,63 @@
+GHCi, version 7.8.3: http://www.haskell.org/ghc/  :? for help
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Prelude> :load "/Users/OWinrauke/Dropbox/CIS352/hw4/Matches2.hs"
+[1 of 2] Compiling RegExp2          ( RegExp2.hs, interpreted )
+[2 of 2] Compiling Matches2         ( /Users/OWinrauke/Dropbox/CIS352/hw4/Matches2.hs, interpreted )
+
+/Users/OWinrauke/Dropbox/CIS352/hw4/Matches2.hs:26:10:
+    Constructor ‘Opt’ should have 1 argument, but has been given 2
+    In the pattern: Opt r1 r2
+    In an equation for ‘matches’:
+        matches (Opt r1 r2) st = matches r1 st && matches r2 st
+Failed, modules loaded: RegExp2.
+*RegExp2> :load "/Users/OWinrauke/Dropbox/CIS352/hw4/Matches2.hs"
+[1 of 2] Compiling RegExp2          ( RegExp2.hs, interpreted )
+[2 of 2] Compiling Matches2         ( /Users/OWinrauke/Dropbox/CIS352/hw4/Matches2.hs, interpreted )
+
+/Users/OWinrauke/Dropbox/CIS352/hw4/Matches2.hs:17:1: Warning:
+    Pattern match(es) are overlapped
+    In an equation for ‘matches’:
+        matches (Opt r) st = ...
+        matches (Plus r) st = ...
+Ok, modules loaded: Matches2, RegExp2.
+*Matches2> quickCheck prop equivA
+
+<interactive>:4:12:
+    Not in scope: ‘prop’
+    Perhaps you meant ‘drop’ (imported from Prelude)
+
+<interactive>:4:17: Not in scope: ‘equivA’
+*Matches2> quickCheck prop_equivA
+Loading package array-0.5.0.0 ... linking ... done.
+Loading package deepseq-1.3.0.2 ... linking ... done.
+Loading package old-locale-1.0.0.6 ... linking ... done.
+Loading package time-1.4.2 ... linking ... done.
+Loading package random-1.0.1.1 ... linking ... done.
+Loading package containers-0.5.5.1 ... linking ... done.
+Loading package pretty-1.1.1.1 ... linking ... done.
+Loading package template-haskell ... linking ... done.
+Loading package QuickCheck-2.6 ... linking ... done.
+*** Failed! Falsifiable (after 8 tests): 
+(((c|@)(@b))|(d)+)
+TS ""
+*Matches2> :load "/Users/OWinrauke/Dropbox/CIS352/hw4/Top2.hs"
+[ 1 of 10] Compiling NfaTypes         ( NfaTypes.hs, interpreted )
+[ 2 of 10] Compiling RegExp2          ( RegExp2.hs, interpreted )
+[ 3 of 10] Compiling NfaLib           ( NfaLib.hs, interpreted )
+[ 4 of 10] Compiling ImplementNfa     ( ImplementNfa.hs, interpreted )
+[ 5 of 10] Compiling NfaToDfa         ( NfaToDfa.hs, interpreted )
+[ 6 of 10] Compiling NfaMisc          ( NfaMisc.hs, interpreted )
+[ 7 of 10] Compiling DrawNfa          ( DrawNfa.hs, interpreted )
+[ 8 of 10] Compiling Matches2         ( Matches2.hs, interpreted )
+
+Matches2.hs:17:1: Warning:
+    Pattern match(es) are overlapped
+    In an equation for ‘matches’:
+        matches (Opt r) st = ...
+        matches (Plus r) st = ...
+[ 9 of 10] Compiling BuildNfa2        ( BuildNfa2.hs, interpreted )
+[10 of 10] Compiling Top2             ( /Users/OWinrauke/Dropbox/CIS352/hw4/Top2.hs, interpreted )
+Ok, modules loaded: Matches2, RegExp2, Top2, BuildNfa2, ImplementNfa, NfaLib, NfaToDfa, NfaMisc, NfaTypes, DrawNfa.
+*Top2> 

@@ -1,0 +1,145 @@
+
+*Main> runAll
+Evaluating:
+    let y = 1 in  let f = (fn x => (+ x y)) in  let y = 10 in (f 100)
+Result:
+    101
+    Locs(!=0): X[0]=4 
+
+Evaluating:
+    let f = (fn x => { X1 := (+ x val(X1)); return val(X1) }) in let x = (f 1) in (+ x (+ x x))
+Result:
+    3
+    Locs(!=0): X[0]=4 X[1]=1 
+
+Evaluating:
+    let f = (fn x => { X1 := 100; return 0}) in  let g = (fn y => 12) in (g (f 9))
+Result:
+    12
+    Locs(!=0): X[0]=4 X[1]=100 
+
+Evaluating:
+    let x = 1 in let f = (fn y => (* x y)) in  let g = (fn x => (f x)) in  print((g 10),(g 100),(g 1000))
+Result:
+    PRINT: 10  100  1000
+
+skip
+    Locs(!=0): X[0]=4 
+
+Evaluating:
+    let x = 1 in  let f = (fn n => { X1 := (+ val(X1) x); return n}) in  let x = 100 in  let g = (fn z => (+ z z)) in  (g (f 12))
+Result:
+    24
+    Locs(!=0): X[0]=4 X[1]=1 
+
+Evaluating:
+    let f = (fn n => 0) in  let f = (fn n => if (< n 1) then 1 else (* n (f (- n 1))))  in (f 3)
+Result:
+    0
+    Locs(!=0): X[0]=4 
+
+*Main> 
+*Main> :load "/Users/Ben/Dropbox/CIS352/hw10/hw10.hs"
+[1 of 4] Compiling State            ( State.hs, interpreted )
+[2 of 4] Compiling LFP2             ( LFP2.hs, interpreted )
+[3 of 4] Compiling LFP2parser       ( LFP2parser.hs, interpreted )
+[4 of 4] Compiling Main             ( /Users/Ben/Dropbox/CIS352/hw10/hw10.hs, interpreted )
+
+/Users/Ben/Dropbox/CIS352/hw10/hw10.hs:26:1: Warning:
+    Pattern match(es) are overlapped
+    In an equation for ‘eval’:
+        eval env (Var x, s) = ...
+        eval env (Fun x e, s) = ...
+        eval env (App e1 e2, s) = ...
+Ok, modules loaded: State, LFP2, LFP2parser, Main.
+*Main> runAll
+Evaluating:
+    let y = 1 in  let f = (fn x => (+ x y)) in  let y = 10 in (f 100)
+Result:
+    101
+    Locs(!=0): X[0]=4 
+
+Evaluating:
+    let f = (fn x => { X1 := (+ x val(X1)); return val(X1) }) in let x = (f 1) in (+ x (+ x x))
+Result:
+    3
+    Locs(!=0): X[0]=4 X[1]=1 
+
+Evaluating:
+    let f = (fn x => { X1 := 100; return 0}) in  let g = (fn y => 12) in (g (f 9))
+Result:
+    12
+    Locs(!=0): X[0]=4 X[1]=100 
+
+Evaluating:
+    let x = 1 in let f = (fn y => (* x y)) in  let g = (fn x => (f x)) in  print((g 10),(g 100),(g 1000))
+Result:
+    PRINT: 10  100  1000
+
+skip
+    Locs(!=0): X[0]=4 
+
+Evaluating:
+    let x = 1 in  let f = (fn n => { X1 := (+ val(X1) x); return n}) in  let x = 100 in  let g = (fn z => (+ z z)) in  (g (f 12))
+Result:
+    24
+    Locs(!=0): X[0]=4 X[1]=1 
+
+Evaluating:
+    let f = (fn n => 0) in  let f = (fn n => if (< n 1) then 1 else (* n (f (- n 1))))  in (f 3)
+Result:
+    0
+    Locs(!=0): X[0]=4 
+
+*Main> :load "/Users/Ben/Dropbox/CIS352/hw10/hw10.hs"
+[1 of 4] Compiling State            ( State.hs, interpreted )
+[2 of 4] Compiling LFP2             ( LFP2.hs, interpreted )
+[3 of 4] Compiling LFP2parser       ( LFP2parser.hs, interpreted )
+[4 of 4] Compiling Main             ( /Users/Ben/Dropbox/CIS352/hw10/hw10.hs, interpreted )
+
+/Users/Ben/Dropbox/CIS352/hw10/hw10.hs:26:1: Warning:
+    Pattern match(es) are overlapped
+    In an equation for ‘eval’:
+        eval env (Var x, s) = ...
+        eval env (Fun x e, s) = ...
+        eval env (App e1 e2, s) = ...
+Ok, modules loaded: State, LFP2, LFP2parser, Main.
+*Main> runAllBut6
+
+<interactive>:10:1:
+    Not in scope: ‘runAllBut6’
+    Perhaps you meant ‘runAllbut6’ (line 213)
+*Main> runAllbut6
+Evaluating:
+    let y = 1 in  let f = (fn x => (+ x y)) in  let y = 10 in (f 100)
+Result:
+    101
+    Locs(!=0): X[0]=4 
+
+Evaluating:
+    let f = (fn x => { X1 := (+ x val(X1)); return val(X1) }) in let x = (f 1) in (+ x (+ x x))
+Result:
+    3
+    Locs(!=0): X[0]=4 X[1]=1 
+
+Evaluating:
+    let f = (fn x => { X1 := 100; return 0}) in  let g = (fn y => 12) in (g (f 9))
+Result:
+    12
+    Locs(!=0): X[0]=4 X[1]=100 
+
+Evaluating:
+    let x = 1 in let f = (fn y => (* x y)) in  let g = (fn x => (f x)) in  print((g 10),(g 100),(g 1000))
+Result:
+    PRINT: 10  100  1000
+
+skip
+    Locs(!=0): X[0]=4 
+
+Evaluating:
+    let x = 1 in  let f = (fn n => { X1 := (+ val(X1) x); return n}) in  let x = 100 in  let g = (fn z => (+ z z)) in  (g (f 12))
+Result:
+    24
+    Locs(!=0): X[0]=4 X[1]=1 
+
+*Main> 

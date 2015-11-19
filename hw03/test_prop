@@ -1,0 +1,10 @@
+
+*Main> quickCheck nnf1_prop
++++ OK, passed 100 tests.
+*Main> quickCheck nnf2_prop
++++ OK, passed 100 tests.
+*Main> quickCheck tidy1_prop
++++ OK, passed 100 tests.
+*Main> quickCheck tidy2_prop
++++ OK, passed 100 tests.
+*Main> 

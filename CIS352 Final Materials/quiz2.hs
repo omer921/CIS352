@@ -1,0 +1,1 @@
+data Multi = Fork Int [Multi] deriving (Show,Eq)
